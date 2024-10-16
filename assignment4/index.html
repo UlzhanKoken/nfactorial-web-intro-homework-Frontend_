@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <title>
+            assignment 4
+        </title>
+    </head>
+    <body>
+        <script>
+            // Перепишите функцию, используя оператор '?' или '||'
+            function checkAge(age){
+               return age>18 ? true : confirm('Родители разрешили? '+ 'тебе еше '+ age + 'лет')
+            }
+
+            //способ 2 
+            function checkAge2(age) {
+                return age > 18 || confirm('Родители разрешили?');
+            }
+            //Функция pow(x,n)
+            function stepen(x,n){
+                let step = 1
+                for(let i=0; i<n; i++){
+                    step = step * x;
+                }
+                return step
+            }
+            //  
+            // const ask = (question, yes, no) => {
+            //     if (confirm(question)) yes();
+            //     else no();
+            // };
+
+            // ask(
+            // "Вы согласны?",
+            //     () => alert("Вы согласились."),
+            //     () => alert("Вы отменили выполнение.")
+            // );
+            // Сортировать в порядке по убыванию
+            let arr = [5, 2, 1, -10, 8];
+            let num = 0;
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = 0; j < arr.length - 1 - i; j++) { 
+                    if (arr[j] > arr[j + 1]) {
+                        num = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = num;
+                    }
+                }
+            }
+            console.log(arr);
+            
+            // transformations
+            // let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+            // let petya = { name: "Петя", surname: "Иванов", id: 2 };
+            // let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+            // let users = [vasya, petya, masha];
+
+            // let usersMapped = users.map(user => ({
+            // fullName: `${user.name} ${user.surname}`,
+            // id: user.id
+            // }));
+
+            // alert(usersMapped[0].id); 
+            // alert(usersMapped[0].fullName); 
+
+            // avg 
+            function getAverageAge(users) {
+                return users.reduce((sum, user) => sum + user.age, 0) / users.length;
+            }
+
+                let vasya = { name: "Вася", age: 25 };
+                let petya = { name: "Петя", age: 30 };
+                let masha = { name: "Маша", age: 29 };
+
+                let arr2 = [vasya, petya, masha];
+
+                alert(getAverageAge(arr2));
+
+            
+
+
+        </script>
+    </body>
+</html>
