@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 05</title>
+</head>
+<body>
+    <table id="age-table">
+        <tr>
+            <td>Age</td>
+            <td>
+                <label for="age1">25</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Madina AA</td>
+            <td>
+                <label for="age2">19</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Madiyar BB</td>
+            <td>
+                <label for="age3">26</label>
+            </td>
+        </tr>
+    </table>
+    <form name="search">
+        <input type="text" placeholder="Search...">
+        <input type="text" placeholder="Another input">
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <script>
+        // 1
+        let tb = document.getElementById("age-table")
+        tb.style.backgroundColor = "hotpink"
+        tb.style.border = "1px solid red"
+        tb.style.width = "100%"
+        tb.style.marginBottom = "30px"
+
+        // 2
+        let labels = tb.querySelectorAll("label")
+        for(let label of labels) {
+            label.style.color = "blue"
+            label.style.fontSize = "21px"
+        }
+        // 3
+        let tds = tb.getElementsByTagName("td")
+        for(let td of tds){
+            if(td.textContent.trim() === "Age"){
+                console.log(td);
+                break;
+            }
+        }
+        // 4 
+        let form = document.querySelector('form[name="search"]');
+        form.style.border ="1px solid red"
+        form.style.width = "500px"
+        form.style.padding = "40px"
+        // 5
+        let firstInput = form.querySelector('input');
+        console.log(firstInput)
+        // 6
+        let inputs = form.querySelectorAll('input');
+        let lastInput = inputs[inputs.length - 1];
+
+        // 7
+
+        let body = document.body;  // документ бади это бади
+
+        body.innerHTML = "<!--" + body.tagName + "-->";  
+
+        alert( body.firstChild.data ); // что выведет?  
+        //  тег <BODY> выведет
+    </script>
+</body>
+</html>
