@@ -6,6 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button id="btn">Click me</button>
+    <div id="text">Remove</div>
 </body>
+
+<script>
+    btn = document.getElementById("btn")
+    txt = document.getElementById("text")
+    btn.addEventListener("click", ()=>{
+        if(txt.style.display === "none"){
+            txt.style.display = "block"
+        }
+        else{
+            txt.style.display = "none"
+        }
+    })
+</script>
 </html>
