@@ -4,13 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+    </style>
 </head>
 <body>
+    <!-- task 1 -->
     <button id="btn">Click me</button>
     <div id="text">Remove</div>
+    <!-- task 2 -->
+    <!-- button.addEventListener("click", () => alert("1"));
+         button.removeEventListener("click", () => alert("1"));
+         button.onclick = () => alert(2); -->
+    <!-- сработает button.onclick, так как это стандартное свойство 
+        для обработки события, и оно перезапишет любой предыдущий 
+        обработчик, который был установлен через onclick. -->
+
+
+    <p class="paragraph">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum debitis placeat voluptatum culpa iste adipisci et? Dignissimos molestias ab, illo architecto id optio laboriosam nemo similique? Labore odio pariatur dicta?
+    </p>
+    <p class="paragraph">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum debitis placeat voluptatum culpa iste adipisci et? Dignissimos molestias ab, illo architecto id optio laboriosam nemo similique? Labore odio pariatur dicta?
+    </p>
+    <p class="paragraph">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum debitis placeat voluptatum culpa iste adipisci et? Dignissimos molestias ab, illo architecto id optio laboriosam nemo similique? Labore odio pariatur dicta?
+    </p>
+    <p class="paragraph">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum debitis placeat voluptatum culpa iste adipisci et? Dignissimos molestias ab, illo architecto id optio laboriosam nemo similique? Labore odio pariatur dicta?
+    </p>
 </body>
 
 <script>
+    // task 1
     btn = document.getElementById("btn")
     txt = document.getElementById("text")
     btn.addEventListener("click", ()=>{
@@ -21,5 +47,23 @@
             txt.style.display = "none"
         }
     })
+
+
+    // task 3 
+    
+    texts = document.querySelectorAll(".paragraph")
+    texts.forEach(text => {
+        text.insertAdjacentHTML("afterbegin", '<button class="remove-btn">x</button>');
+    });
+
+    const removeButtons = document.querySelectorAll(".remove-btn");
+
+    removeButtons.forEach(button=>{
+        button.addEventListener("click", (event)=>{
+            event.target.parentElement.remove()
+        })
+    })
+    
+    
 </script>
 </html>
